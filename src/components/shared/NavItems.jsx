@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function NavItems({ children, path }) {
   return (
     <li>
-      <Link to={path}>{children}</Link>
+      <NavLink className=" font-semibold text-title-color text-base " to={path}>
+        {children}
+      </NavLink>
     </li>
   );
 }

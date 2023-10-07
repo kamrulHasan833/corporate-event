@@ -1,5 +1,11 @@
+import Services from "../../Services";
+
 function Home() {
-  return <div className=" ">This is Home</div>;
+  return (
+    <main>
+      <Services></Services>
+    </main>
+  );
 }
 
 export default Home;

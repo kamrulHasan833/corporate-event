@@ -9,4 +9,19 @@
 /* common styles */
 body {
   font-family: "Poppins", sans-serif;
+  height: 2000px;
+}
+#nav-menu .active {
+  border-bottom: 1px solid #d91d57;
+  background-color: white;
+  color: #d91d57;
+}
+.swiper-button-prev::after {
+  color: white;
+
+  margin-left: 20px;
+}
+.swiper-button-next::after {
+  color: white;
+  margin-right: 20px;
 }

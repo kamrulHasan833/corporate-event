@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#699C47",
+        primary: "#d91d57",
         "title-color": "#1C1D1B",
       },
       maxWidth: {
-        standard: "80rem",
+        standard: "90rem",
+        large: "125rem",
       },
       fontFamily: {
         poppins: "'Poppins', sans-serif",

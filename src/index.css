@@ -9,7 +9,6 @@
 /* common styles */
 body {
   font-family: "Poppins", sans-serif;
-  height: 2000px;
 }
 #nav-menu .active {
   border-bottom: 1px solid #d91d57;

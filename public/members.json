@@ -1,0 +1,55 @@
+[
+  {
+    "id": "1",
+    "name": "Jane Smith",
+    "occupation": "Event Manager",
+    "details": "Experienced event manager with a proven track record in organizing award ceremonies, corporate meetings, and product launches.",
+    "event_type": "Award Ceremonies",
+    "image_url": "https://i.ibb.co/3vhvbcL/mem-1.jpg"
+  },
+
+  {
+    "id": "2",
+    "name": "John Doe",
+    "occupation": "Event Coordinator",
+    "details": "Dedicated event coordinator specializing in team building workshops and trade shows. Highly organized and creative.",
+    "event_type": "Team Building Workshops",
+    "image_url": "https://i.ibb.co/wrybFCR/mem-2.jpg"
+  },
+
+  {
+    "id": "3",
+    "name": "Emily Johnson",
+    "occupation": "Event Planner",
+    "details": "Experienced event planner known for successful product launches and expos. Attention to detail is my strength.",
+    "event_type": "Product Launches",
+    "image_url": "https://i.ibb.co/9bN70HT/mem-3.jpg"
+  },
+
+  {
+    "id": "4",
+    "name": "Michael Wilson",
+    "occupation": "Event Producer",
+    "details": "Talented event producer specializing in organizing trade shows and expos that leave a lasting impression.",
+    "event_type": "Trade Shows and Expos",
+    "image_url": "https://i.ibb.co/pzmbtS8/mem-4.jpg"
+  },
+
+  {
+    "id": "5",
+    "name": "Sarah Adams",
+    "occupation": "Event Coordinator",
+    "details": "Skilled event coordinator with expertise in planning and executing conferences and seminars of all sizes.",
+    "event_type": "Conferences and Seminars",
+    "image_url": "https://i.ibb.co/fMLFxxY/mem-5.jpg"
+  },
+
+  {
+    "id": "6",
+    "name": "David Brown",
+    "occupation": "Event Manager",
+    "details": "Seasoned event manager known for flawlessly organizing corporate meetings that drive success.",
+    "event_type": "Corporate Meetings",
+    "image_url": "https://i.ibb.co/1T5V3p0/mem-6.jpg"
+  }
+]

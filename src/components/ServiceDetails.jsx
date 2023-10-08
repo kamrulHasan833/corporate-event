@@ -9,10 +9,14 @@ function ServiceDetails() {
   return (
     <section>
       <Middle>
-        <div className="flex flex-col md:flex-row gap-6 md:gap-10 mt-10 md:mt-20">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-10 mt-10 md:mt-20 rounded-lg">
           <div className=" basis-1/2">
             <div>
-              <img src={card_details_image} alt="" className="w-full block" />
+              <img
+                src={card_details_image}
+                alt=""
+                className="w-full block rounded-t-lg"
+              />
             </div>
           </div>
           <div className=" basis-1/2">

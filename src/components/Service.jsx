@@ -11,11 +11,11 @@ function Service({ service }) {
     });
   };
   return (
-    <div className="rounded-md pb-10 flex flex-col justify-between ">
+    <div className="rounded-md pb-10 flex flex-col justify-between group ">
       <div>
         <div className=" overflow-hidden">
           <img
-            className=" rounded-t-md hover:scale-105 transition"
+            className=" rounded-t-md transition group-hover:scale-105 "
             src={card_image && card_image}
             alt=""
           />

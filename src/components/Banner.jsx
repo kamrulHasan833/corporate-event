@@ -10,7 +10,7 @@ function Banner() {
   useEffect(() => {
     setContent(slides[count]);
   }, [count, content, slides]);
-  console.log(slides);
+
   const onSlideChange = () => {
     if (count < slides.length - 1) {
       setCount(count + 1);

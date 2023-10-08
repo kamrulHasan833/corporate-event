@@ -2,13 +2,19 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Home from "../components/pages/Home/Home";
 
-import Blogs from "../components/pages/Blogs/Blogs";
+import BlogDetails from "../components/BlogDetails";
 import ServiceDetails from "../components/ServiceDetails";
+import Blogs from "../components/pages/Blogs/Blogs";
+import ContextProvider from "../contexts/dataLoaderContext";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>,
+    element: (
+      <ContextProvider>
+        <App></App>
+      </ContextProvider>
+    ),
     children: [
       {
         path: "/",
@@ -21,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/service/:id",
         element: <ServiceDetails></ServiceDetails>,
+      },
+      {
+        path: "/blogs/:id",
+        element: <BlogDetails></BlogDetails>,
       },
     ],
   },

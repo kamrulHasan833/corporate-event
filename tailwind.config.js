@@ -9,7 +9,7 @@ export default {
       },
       maxWidth: {
         standard: "90rem",
-        secondary: "82.5rem",
+        secondary: "40rem",
         large: "125rem",
       },
       fontFamily: {

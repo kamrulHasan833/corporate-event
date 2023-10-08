@@ -11,7 +11,7 @@ import "swiper/css";
 
 function Teams() {
   const { members: teams } = useLoaderDataContext();
-  console.log(teams);
+
   const onSlideChange = () => {
     console.log("slide Change");
   };

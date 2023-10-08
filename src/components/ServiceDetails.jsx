@@ -30,9 +30,9 @@ function ServiceDetails() {
               <p className="text-xl md:text-2xl font-medium text-gray-600">
                 Price: {price}
               </p>
-              <p className="text-xl md:text-2xl font-medium text-gray-600">
+              <div className="text-xl md:text-2xl font-medium text-gray-600">
                 Reviews: <Rating rating={rating}></Rating>
-              </p>
+              </div>
             </div>
             <div>
               <Button>Book Now</Button>

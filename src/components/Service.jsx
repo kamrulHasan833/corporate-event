@@ -31,13 +31,13 @@ function Service({ service }) {
                 : description}
             </p>
             <div className="flex justify-between mb-10">
-              <p className="text-lg font-medium text-gray-600">
+              <div className="text-lg font-medium text-gray-600">
                 Price: {price}
-              </p>
-              <p className="text-lg font-medium text-gray-600 text-end">
+              </div>
+              <div className="text-lg font-medium text-gray-600 text-end">
                 {" "}
                 Reviews: <Rating rating={rating}></Rating>
-              </p>
+              </div>
             </div>
           </div>
         </div>

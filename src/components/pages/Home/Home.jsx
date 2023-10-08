@@ -1,7 +1,6 @@
 import BlogCards from "../../BlogCards";
 import Services from "../../Services";
 import Teams from "../../Teams";
-
 function Home() {
   return (
     <main>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderDataContext } from "../contexsts/dataLoaderContext";
+import { useLoaderDataContext } from "../contexts/dataLoaderContext";
 import Slider from "./Slider";
 import Middle from "./layout/Middle";
 

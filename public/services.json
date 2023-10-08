@@ -1,50 +1,56 @@
 [
   {
+    "id": "conferences-and-eminars",
     "title": "Conferences and Seminars",
     "description": "Join us for a two-day event featuring industry experts, networking opportunities, and insightful seminars on business growth strategies. This conference is designed to provide participants with valuable insights into the latest trends and strategies in the business world. Don't miss this opportunity to expand your knowledge and network with professionals from various industries. With a focus on practical knowledge and actionable takeaways, our conference is a must-attend for anyone looking to stay ahead in today's competitive business landscape. Reserve your spot today and be part of this educational and networking experience. See you at the conference!",
     "card_image": "https://i.ibb.co/RpTyvdb/conference.jpg",
     "card_details_image": "https://i.ibb.co/wsSnQd2/conference-large.png",
     "price": "$2299",
-    "rating": 4.5
+    "rating": 5
   },
   {
+    "id": "trade-shows-and-expos",
     "title": "Trade Shows and Expos",
     "description": "Explore the latest tech innovations and connect with leading companies in this three-day technology exposition. Our expo showcases cutting-edge technology products and services from top industry players. It's the perfect opportunity to get hands-on experience with the latest gadgets and solutions. Admission is free, so bring your friends and colleagues to discover the future of technology. Whether you're a tech enthusiast or a business professional, our expo has something for everyone. Don't miss out on this chance to be part of the tech revolution!",
-    "card_image": "https://i.ibb.co/GJn8yP8/trade-shows.jpg",
+    "card_image": "https://i.ibb.co/Y8dTzq8/trade-shows.jpg",
     "card_details_image": "https://i.ibb.co/bBKdJsC/trade-shows-large.png",
     "price": "$7010",
-    "rating": 4.4
+    "rating": 3
   },
   {
+    "id": "team-building-workshops",
     "title": "Team Building Workshops",
     "description": "Strengthen your team's bonds with our immersive three-day retreat filled with team-building activities and workshops. Our workshops are designed to foster collaboration, improve communication, and enhance teamwork. Through a series of engaging activities and group exercises, your team will develop essential skills while having fun. Join us for an unforgettable experience that will leave your team motivated and inspired. Invest in your team's success and book your spot now. It's time to build a stronger and more cohesive team!",
     "card_image": "https://i.ibb.co/TTRsdYg/team-building.jpg",
     "card_details_image": "https://i.ibb.co/Qf4VM5m/team-building-large.png",
     "price": "$699",
-    "rating": 4.6
+    "rating": 2
   },
   {
+    "id": "product-launches",
     "title": "Product Launches",
     "description": "Be the first to witness groundbreaking innovation as we unveil our latest product lineup. Our invitation-only event is an exclusive opportunity to see the future of technology and innovation. Get a sneak peek at what's next in the world of products and services. Join industry leaders, innovators, and decision-makers for an evening of excitement and inspiration. Limited spots available, so request your invitation today and be part of this exclusive product launch!",
     "card_image": "https://i.ibb.co/ZMbVwzC/product-launch.jpg",
     "card_details_image": "https://i.ibb.co/3kDGfqT/product-launch-large.png",
     "price": "$1220",
-    "rating": 5.0
+    "rating": 2.5
   },
   {
+    "id": "corporate-metings",
     "title": "Corporate Meetings",
     "description": "Our annual shareholders meeting to discuss company performance and future plans. Shareholders play a vital role in shaping the future of our company. This meeting is an opportunity for you to voice your opinions, ask questions, and gain insights into our strategies. We value your input and look forward to a productive discussion. Attendance is exclusive to shareholders, so ensure you have your shareholder credentials ready. Together, let's continue to steer our company towards success.",
-    "card_image": "https://i.ibb.co/TBT4qg9/corporate-meeting.jpg",
+    "card_image": "https://i.ibb.co/0mtdZJc/corporate-meeting.jpg",
     "card_details_image": "https://i.ibb.co/3sxkqKW/corporate-meeting-large.png",
     "price": "$2000",
-    "rating": 4.3
+    "rating": 4.5
   },
   {
+    "id": "award-ceremonies",
     "title": "Award Ceremonies",
     "description": "Celebrate excellence and honor outstanding individuals and organizations at our prestigious awards gala. This gala is a tribute to those who have achieved remarkable success and made significant contributions to their fields. Join us for an evening of elegance and recognition as we applaud the best in the business. Get your tickets today and be part of this memorable event. Dress your best, and let's celebrate together!",
     "card_image": "https://i.ibb.co/WVFvY2s/award-ceremonies.jpg",
     "card_details_image": "https://i.ibb.co/gvSdz60/award-ceremonies-large.png",
     "price": "$1500",
-    "rating": 4.4
+    "rating": 4
   }
 ]

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { useAuth } from "../../../contexts/authContext";
 import MiddleSeondary from "../../layout/MiddleSeondary";
 import LoginButton from "../../shared/LoginButton";
@@ -19,11 +20,18 @@ function Login() {
       .then(() => {
         // navigate to
         if (state && state.pathname.includes("service")) {
-          navigate(state.pathname, {
-            state: state.state,
-          });
+          toast("You have loggedin sccessfully!");
+          // navigate to
+          setTimeout(
+            () =>
+              navigate(state.pathname, {
+                state: state.state,
+              }),
+            2000
+          );
         } else if (!loading && !error && !state) {
-          navigate("/");
+          toast("You have loggedin sccessfully!");
+          setTimeout(() => navigate("/"), 2000);
         }
       })
       .catch((err) => {
@@ -43,11 +51,19 @@ function Login() {
       .then(() => {
         // navigate to
         if (state && state.pathname.includes("service")) {
-          navigate(state.pathname, {
-            state: state.state,
-          });
+          toast("You have loggedin sccessfully!");
+          // navigate to
+          setTimeout(
+            () =>
+              navigate(state.pathname, {
+                state: state.state,
+              }),
+            2000
+          );
         } else if (!loading && !error && !state) {
-          navigate("/");
+          toast("You have loggedin sccessfully!");
+          // navigate to
+          setTimeout(() => navigate("/"), 2000);
         }
       })
       .catch((err) => {
@@ -154,6 +170,7 @@ function Login() {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </MiddleSeondary>
     </section>
   );

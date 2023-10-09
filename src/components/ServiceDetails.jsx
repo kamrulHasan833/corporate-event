@@ -5,7 +5,7 @@ import Rating from "./shared/Rating";
 function ServiceDetails() {
   const { state: service } = useLocation();
   const { title, card_details_image, description, price, rating } = service;
-  console.log("service details");
+
   return (
     <section>
       <Middle>

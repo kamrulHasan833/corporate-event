@@ -16,24 +16,25 @@ function Register() {
   const googleLogin = () => {
     loginWithGoogle()
       .then(() => {
+        toast("You have registered sccessfully!");
         // navigate to
-        navigate("/");
+        setTimeout(() => navigate("/"), 2000);
       })
       .catch((err) => {
         setError(err);
       });
   };
   const { register } = useAuth();
+
+  // Handle register with with email and password
   const handleSubmit = (e) => {
     e.preventDefault();
     const target = e.target;
     const name = target.name.value;
     const email = target.email.value;
     const password = target.password.value;
-
     const uppercasePassword = /[A-Z]/;
     const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
-
     if (password.length < 6) {
       setError("Password is less than 6 charecters!");
     } else if (!uppercasePassword.test(password)) {
@@ -46,6 +47,8 @@ function Register() {
       // register
       register(name, email, password);
       toast("You have registered sccessfully!");
+      // navigate to
+      setTimeout(() => navigate("/"), 2000);
     }
 
     // reset input fields

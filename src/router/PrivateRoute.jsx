@@ -5,10 +5,10 @@ import { useAuth } from "../contexts/authContext";
 import useIsUser from "../hooks/useIsUser";
 
 function PrivateRoute({ children }) {
-  const { loading, user } = useAuth();
+  const { loading } = useAuth();
   const location = useLocation();
   const currentUser = useIsUser();
-  console.log(currentUser, user);
+
   const elementToRender = () => {
     let element;
     if (!loading) {

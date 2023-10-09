@@ -1,8 +1,9 @@
 # Corporate Evevnt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+###### The five features of my project are given below:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This website is about corporate event management service provider.
+- It has 6 section on home page. They are header, service, team, blog and footer.
+- It has 8 pages like home, about, blog, login, register, service details, blog details and 404 not found page.
+- Service section contains 6 types of service on corporate event management.
+- Clicking on each service navigate to service details page which is private route or page.

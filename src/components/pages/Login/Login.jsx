@@ -1,59 +1,63 @@
-/* eslint-disable no-useless-escape */
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../contexts/authContext";
 import MiddleSeondary from "../../layout/MiddleSeondary";
 import LoginButton from "../../shared/LoginButton";
-function Register() {
+
+function Login() {
   const [showPassword, setShowPassword] = useState(false);
-  const { error: newError, loginWithGoogle } = useAuth();
-  const [error, setError] = useState("");
+  const { state } = useLocation();
+  const [error, setError] = useState(false);
+  const { login, loading, loginWithGoogle } = useAuth();
+
   const navigate = useNavigate();
+
   // login with google
   const googleLogin = () => {
     loginWithGoogle()
       .then(() => {
         // navigate to
-        navigate("/");
+        if (state && state.pathname.includes("service")) {
+          navigate(state.pathname, {
+            state: state.state,
+          });
+        } else if (!loading && !error && !state) {
+          navigate("/");
+        }
       })
       .catch((err) => {
         setError(err);
       });
   };
-  const { register } = useAuth();
-  const handleSubmit = (e) => {
+
+  // login with email and password
+  const handleLogin = (e) => {
     e.preventDefault();
     const target = e.target;
-    const name = target.name.value;
     const email = target.email.value;
     const password = target.password.value;
 
-    const uppercasePassword = /[A-Z]/;
-    const specialCharacterRegex = /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]/;
-
-    if (password.length < 6) {
-      setError("Password is less than 6 charecters!");
-    } else if (!uppercasePassword.test(password)) {
-      setError("Password don't have a capital letter!");
-    } else if (!specialCharacterRegex.test(password)) {
-      setError("Password  don't have a special character!");
-    } else if (newError) {
-      setError(newError.code);
-    } else {
-      // register
-      register(name, email, password);
-      toast("You have registered sccessfully!");
-    }
+    // login
+    login(email, password)
+      .then(() => {
+        // navigate to
+        if (state && state.pathname.includes("service")) {
+          navigate(state.pathname, {
+            state: state.state,
+          });
+        } else if (!loading && !error && !state) {
+          navigate("/");
+        }
+      })
+      .catch((err) => {
+        setError(err);
+      });
 
     // reset input fields
-    target.name.value = "";
     target.email.value = "";
     target.password.value = "";
   };
-
   const handleShow = () => {
     setShowPassword(!showPassword);
   };
@@ -61,30 +65,18 @@ function Register() {
   return (
     <section>
       <MiddleSeondary>
-        <div className="bg-[url('https://i.ibb.co/3kDGfqT/product-launch-large.png')] bg-cover rounded-md mt-10 sm:mt-20 ">
-          <div className="bg-black bg-opacity-80 px-6 sm:px-20 py-6 sm:py-20  rounded-md  ">
+        <div className="bg-[url('https://i.ibb.co/3kDGfqT/product-launch-large.png')] bg-cover rounded-md mt-10 sm:mt-20">
+          <div className=" bg-black bg-opacity-80 px-6 sm:px-20 py-6 sm:py-20  rounded-md ">
             <h3 className=" text-3xl md:text-5xl font-semibold text-white text-center ">
-              Register Now
+              Login Now
             </h3>
             <LoginButton googleLogin={googleLogin}>
-              Register with Google
+              Login with Google
             </LoginButton>
             <form
-              onSubmit={handleSubmit}
+              onSubmit={handleLogin}
               className="card-body p-0 pt-5 sm:pt-10 "
             >
-              <div className="form-control">
-                <label className="label">
-                  <span className="text-base sm:text-xl text-white">Name</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="Enter your name"
-                  className="input input-bordered"
-                  name="name"
-                  required
-                />
-              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="text-base sm:text-xl text-white">Email</span>
@@ -122,11 +114,21 @@ function Register() {
                     )}
                   </span>
                 </div>
+
+                <label className="label">
+                  <a
+                    href="#"
+                    className="label-text-alt text-base sm:text-lg link link-hover text-white"
+                  >
+                    Forgot password?
+                  </a>
+                </label>
               </div>
               <div className="text-center mt-6">
                 <input
                   type="submit"
                   className="bg-primary text-white text-base md:text-xl font-semibold rounded-md  px-6 md:px-20  py-2 md:py-3 hover:bg-white hover:text-primary border-none "
+                  value="Login"
                 />
               </div>
             </form>
@@ -136,25 +138,25 @@ function Register() {
                   error ? "block" : "hidden"
                 }`}
               >
-                {error && error}
+                {error.code === "auth/invalid-login-credentials" &&
+                  "Email or Password was not matched!"}
               </p>
               <p className="label-text-alt font-normal text-base sm:text-lg text-white text-center pt-5 md:pt-8">
-                Already have an account? Please{" "}
+                Do not have an account? Please{" "}
                 <Link
-                  to="/login"
-                  className="text-primary  link link-hover font-semibold sm:text-xl"
+                  to="/register"
+                  className="text-primary  link link-hover font-semibold"
                 >
-                  login
+                  register
                 </Link>{" "}
                 now.
               </p>
             </div>
           </div>
         </div>
-        <ToastContainer />
       </MiddleSeondary>
     </section>
   );
 }
 
-export default Register;
+export default Login;

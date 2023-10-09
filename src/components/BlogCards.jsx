@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useLoaderDataContext } from "../contexts/dataLoaderContext";
 import BlogCard from "./BlogCard";
 import SectionHeader from "./SectionHeader";
@@ -17,9 +18,6 @@ function BlogCards() {
     setBlogsShow(newBlogs);
   }, [blogs]);
 
-  const handleExploreMore = () => {
-    setBlogsShow([...blogs]);
-  };
   return (
     <section>
       <Middle>
@@ -36,7 +34,9 @@ function BlogCards() {
         </div>
         {blogsShow && blogsShow.length === 4 && (
           <div className="text-center mt-6 ">
-            <Button handleExploreMore={handleExploreMore}>See More</Button>
+            <Link to="/blogs">
+              <Button>See More</Button>
+            </Link>
           </div>
         )}
       </Middle>

@@ -11,7 +11,10 @@ function Service({ service }) {
     });
   };
   return (
-    <div className="rounded-md pb-10 flex flex-col justify-between group ">
+    <div
+      className="rounded-md pb-10 flex flex-col justify-between group "
+      data-aos="fade-up"
+    >
       <div>
         <div className=" overflow-hidden">
           <img
@@ -44,7 +47,7 @@ function Service({ service }) {
       </div>
 
       <div>
-        <Button handleExploreMore={handleExploreMore}>Explore More</Button>
+        <Button handleExploreMore={handleExploreMore}>Details</Button>
       </div>
     </div>
   );

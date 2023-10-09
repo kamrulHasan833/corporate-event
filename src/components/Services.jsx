@@ -8,7 +8,7 @@ function Services() {
     <section>
       <Middle>
         <SectionHeader
-          title="Sevices"
+          title="Our Sevices"
           desc="  We provide all types of corporate event mangement services.Choose your
         favourites."
         ></SectionHeader>

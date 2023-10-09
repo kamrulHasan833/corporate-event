@@ -1,6 +1,7 @@
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useLoaderDataContext } from "../contexts/dataLoaderContext";
 import SectionHeader from "./SectionHeader";
@@ -12,25 +13,35 @@ import "swiper/css";
 function Teams() {
   const { members: teams } = useLoaderDataContext();
 
-  const onSlideChange = () => {
-    console.log("slide Change");
-  };
   return (
     <section>
       <Middle>
         <SectionHeader
-          title="Our Team Members"
+          title="Our Team"
           desc="We are cooperated nicely each other."
         ></SectionHeader>
         <Swiper
           autoplay={{ delay: 3000 }}
           loop={true}
+          slidesPerView={1}
           spaceBetween={24}
-          slidesPerView={3}
           navigation={true}
-          onSlideChange={onSlideChange}
-          modules={[Navigation, Autoplay]}
-          className={`w-full rounded-lg `}
+          pagination={{
+            clickable: true,
+          }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+          }}
+          modules={[Navigation, Autoplay, Pagination]}
+          className="mySwiper w-full rounded-lg "
         >
           {teams.length > 0 &&
             teams.map((team, ind) => (

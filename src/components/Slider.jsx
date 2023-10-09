@@ -16,7 +16,6 @@ function Slider({ slides, onSlideChange }) {
       modules={[Navigation, Autoplay]}
       onSlideChange={onSlideChange}
       className={`w-full rounded-lg`}
-      onSwiper={(swiper) => console.log(swiper)}
     >
       {slides.length > 0 &&
         slides.map((slide, ind) => (

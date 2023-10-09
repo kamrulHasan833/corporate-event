@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { FaRegCalendarDays } from "react-icons/fa6";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Middle from "./layout/Middle";
 import Button from "./shared/Button";
 function BlogDetails({ singleBlog }) {
@@ -8,7 +8,7 @@ function BlogDetails({ singleBlog }) {
   if (singleBlog) {
     blog = singleBlog;
   }
-  console.log(blog, singleBlog);
+
   const { title, description, event_type, date, image } = blog;
   return (
     <section>
@@ -38,7 +38,9 @@ function BlogDetails({ singleBlog }) {
             </p>
 
             <div className="text-center">
-              <Button>About Us</Button>
+              <Link to="/about">
+                <Button>About Us</Button>
+              </Link>
             </div>
           </div>
         </div>

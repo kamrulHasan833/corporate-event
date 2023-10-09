@@ -12,7 +12,10 @@ function BlogCard({ blog }) {
 
   const isMoreText = description && description.length > 50;
   return (
-    <div className="rounded-md  flex flex-col justify-between group">
+    <div
+      className="rounded-md  flex flex-col justify-between group"
+      data-aos="fade-up"
+    >
       <div>
         <div className=" overflow-hidden">
           <img

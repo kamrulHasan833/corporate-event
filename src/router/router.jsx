@@ -4,9 +4,13 @@ import Home from "../components/pages/Home/Home";
 
 import BlogDetails from "../components/BlogDetails";
 import ServiceDetails from "../components/ServiceDetails";
+import About from "../components/pages/About/About";
 import Blogs from "../components/pages/Blogs/Blogs";
+import Login from "../components/pages/Login/Login";
+import NotFound from "../components/pages/NotFound/NotFound";
 import Register from "../components/pages/Register/Register";
 import ContextProvider from "../contexts/dataLoaderContext";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +20,7 @@ const router = createBrowserRouter([
         <App></App>
       </ContextProvider>
     ),
+    errorElement: <NotFound></NotFound>,
     children: [
       {
         path: "/",
@@ -27,7 +32,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/service/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
+        errorElement: <NotFound></NotFound>,
       },
       {
         path: "/blogs/:id",
@@ -36,6 +46,14 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
     ],
   },

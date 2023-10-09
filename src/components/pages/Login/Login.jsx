@@ -81,7 +81,7 @@ function Login() {
   return (
     <section>
       <MiddleSeondary>
-        <div className="bg-[url('https://i.ibb.co/3kDGfqT/product-launch-large.png')] bg-cover rounded-md mt-10 sm:mt-20">
+        <div className="bg-[url('https://i.ibb.co/hFWtSpX/product-launch-large.jpg')] bg-cover rounded-md mt-10 sm:mt-20">
           <div className=" bg-black bg-opacity-80 px-6 sm:px-20 py-6 sm:py-20  rounded-md ">
             <h3 className=" text-3xl md:text-5xl font-semibold text-white text-center ">
               Login Now

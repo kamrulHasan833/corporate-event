@@ -22,7 +22,7 @@ function Banner() {
   return (
     <section>
       <div
-        className={` max-w-large mx-auto bg-[url(https://i.ibb.co/3kDGfqT/product-launch-large.png)] bg-cover`}
+        className={` max-w-large mx-auto bg-[url('https://i.ibb.co/hFWtSpX/product-launch-large.jpg')] bg-cover`}
         data-aos="zoom-in"
       >
         <div className="bg-black bg-opacity-30  py-10 md:py-20 ">

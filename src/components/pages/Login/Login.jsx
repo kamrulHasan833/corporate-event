@@ -10,12 +10,14 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const { state } = useLocation();
   const [error, setError] = useState(false);
-  const { login, loading, loginWithGoogle } = useAuth();
+  const { login, loginWithGoogle } = useAuth();
 
   const navigate = useNavigate();
 
   // login with google
   const googleLogin = () => {
+    setError(false);
+
     loginWithGoogle()
       .then(() => {
         // navigate to
@@ -29,7 +31,7 @@ function Login() {
               }),
             2000
           );
-        } else if (!loading && !error && !state) {
+        } else if (!state) {
           toast("You have loggedin sccessfully!");
           setTimeout(() => navigate("/"), 2000);
         }
@@ -42,6 +44,7 @@ function Login() {
   // login with email and password
   const handleLogin = (e) => {
     e.preventDefault();
+    setError(false);
     const target = e.target;
     const email = target.email.value;
     const password = target.password.value;
@@ -60,7 +63,7 @@ function Login() {
               }),
             2000
           );
-        } else if (!loading && !error && !state) {
+        } else if (!state) {
           toast("You have loggedin sccessfully!");
           // navigate to
           setTimeout(() => navigate("/"), 2000);
@@ -121,7 +124,7 @@ function Login() {
                   />
                   <span
                     onClick={handleShow}
-                    className=" absolute right-3 top-3"
+                    className=" absolute right-3 top-3 cursor-pointer"
                   >
                     {showPassword ? (
                       <AiOutlineEyeInvisible className=" text-title-color text-2xl "></AiOutlineEyeInvisible>

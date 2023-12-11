@@ -8,7 +8,10 @@ import "swiper/css";
 function Slider({ slides, onSlideChange }) {
   return (
     <Swiper
-      autoplay={{ delay: 2000 }}
+      autoplay={{
+        delay: 2000,
+        disableOnInteraction: false,
+      }}
       loop={true}
       spaceBetween={0}
       slidesPerView={1}

@@ -18,7 +18,7 @@ function Navbar() {
   );
 
   return (
-    <div className="shadow-xl bg-white">
+    <div className="shadow-xl bg-white " data-aos="fade-down">
       <Middle>
         <div className="navbar bg-base-100   py-5 md:py-7 px-0">
           <div className="navbar-start">
@@ -46,40 +46,42 @@ function Navbar() {
                 {items}
               </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl p-0">
+            <Link to="/" className="btn btn-ghost normal-case text-xl p-0">
               <img
                 src="https://i.ibb.co/vHgFms4/logo-primary.png"
                 alt="Logo"
                 className="w-24 lg:w-28"
               />
-            </a>
+            </Link>
           </div>
           <div className="navbar-center hidden md:flex">
-            <ul id="nav-menu" className="menu menu-horizontal px-1">
+            <ul id="nav-menu" className="menu menu-horizontal px-1 gap-2">
               {items}
             </ul>
           </div>
           <div className="navbar-end">
-            <div className="flex flex-col   items-center gap-1">
-              <div className="w-10  rounded-full border">
-                <img
-                  src={
-                    photoURL
-                      ? photoURL
-                      : "https://i.ibb.co/vV9hYVf/no-avater.jpg"
-                  }
-                  alt=""
-                  className=" rounded-full"
-                />
-              </div>
-              {displayName && (
-                <div>
-                  <h3 className=" text-xs md:text-sm text-title-color font-medium text-center">
-                    {displayName && displayName}
-                  </h3>
+            {currentUser && (
+              <div className="flex flex-col   items-center gap-1">
+                <div className="w-10  rounded-full border">
+                  <img
+                    src={
+                      photoURL
+                        ? photoURL
+                        : "https://i.ibb.co/vV9hYVf/no-avater.jpg"
+                    }
+                    alt=""
+                    className=" rounded-full"
+                  />
                 </div>
-              )}
-            </div>
+                {displayName && (
+                  <div>
+                    <h3 className=" text-xs md:text-sm text-title-color font-medium text-center">
+                      {displayName && displayName}
+                    </h3>
+                  </div>
+                )}
+              </div>
+            )}
 
             {currentUser ? (
               <button

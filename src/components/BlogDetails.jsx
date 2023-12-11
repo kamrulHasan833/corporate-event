@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { FaRegCalendarDays } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
-import Middle from "./layout/Middle";
+import MiddleSeondary from "./layout/MiddleSeondary";
 import Button from "./shared/Button";
 function BlogDetails({ singleBlog }) {
   let { state: blog } = useLocation();
@@ -12,28 +12,28 @@ function BlogDetails({ singleBlog }) {
   const { title, description, event_type, date, image } = blog;
   return (
     <section>
-      <Middle>
+      <MiddleSeondary>
         <div className=" mt-10 md:mt-20 rounded-lg">
-          <div className=" basis-1/2">
-            <div className="mb-6 ">
+          <div className=" basis-1/2" data-aos="fade-up">
+            <div className="mb-3 ">
               <img src={image} alt="" className="w-full block rounded-t-lg" />
             </div>
-            <div className="flex justify-between mb-6 md:mb-8">
-              <p className="text-xl md:text-2xl font-medium text-gray-600">
+            <div className="flex justify-between mb-2 md:mb-4">
+              <p className="text-base md:text-lg font-medium text-gray-600">
                 <span className=" font-medium text-gray-500 flex items-center">
                   <FaRegCalendarDays></FaRegCalendarDays>: {date}
                 </span>
               </p>
-              <p className="text-xl md:text-2xl font-medium text-gray-600">
+              <p className="text-base md:text-lg font-medium text-gray-600">
                 Blog Type: {event_type}
               </p>
             </div>
           </div>
-          <div className=" basis-1/2">
-            <h3 className="text-2xl md:text-5xl  font-bold text-title-color  mb-3 md:mb-5">
+          <div className=" basis-1/2" data-aos="fade-up">
+            <h3 className="text-xl md:text-3xl  font-bold text-title-color  mb-2 md:mb-4">
               {title}
             </h3>
-            <p className=" text-gray-600 text-justify mb-6 md:mb-10">
+            <p className="text-sm md:text-base text-gray-600 text-justify mb-6 md:mb-10">
               {description}
             </p>
 
@@ -44,7 +44,7 @@ function BlogDetails({ singleBlog }) {
             </div>
           </div>
         </div>
-      </Middle>
+      </MiddleSeondary>
     </section>
   );
 }

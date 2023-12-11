@@ -6,7 +6,6 @@ function Rating({ rating }) {
   const handleOnChange = (e) => {
     const value = e.target.checked;
     setCheck(value);
-    console.log(value);
   };
 
   return (

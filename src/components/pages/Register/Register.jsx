@@ -116,7 +116,7 @@ function Register() {
                   />
                   <span
                     onClick={handleShow}
-                    className=" absolute right-3 top-3"
+                    className=" absolute right-3 top-3 cursor-pointer"
                   >
                     {showPassword ? (
                       <AiOutlineEyeInvisible className=" text-title-color text-2xl "></AiOutlineEyeInvisible>

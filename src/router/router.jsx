@@ -9,17 +9,12 @@ import Blogs from "../components/pages/Blogs/Blogs";
 import Login from "../components/pages/Login/Login";
 import NotFound from "../components/pages/NotFound/NotFound";
 import Register from "../components/pages/Register/Register";
-import ContextProvider from "../contexts/dataLoaderContext";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <ContextProvider>
-        <App></App>
-      </ContextProvider>
-    ),
+    element: <App></App>,
     errorElement: <NotFound></NotFound>,
     children: [
       {

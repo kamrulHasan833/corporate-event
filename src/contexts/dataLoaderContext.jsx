@@ -7,15 +7,19 @@ function ContextProvider({ children }) {
   const [blogs, setBlogs] = useState([]);
   const [members, setMembers] = useState([]);
   useEffect(() => {
-    fetch("services.json")
+    const host = location.origin;
+    fetch(`${host}/services.json`)
       .then((data) => data.json())
-      .then((services) => setServices(services));
-    fetch("blogs.json")
+      .then((services) => setServices(services))
+      .catch((err) => console.log(err.message));
+    fetch([`${host}/blogs.json`])
       .then((data) => data.json())
-      .then((blogs) => setBlogs(blogs));
-    fetch("members.json")
+      .then((blogs) => setBlogs(blogs))
+      .catch((err) => console.log(err.message));
+    fetch(`${host}/members.json`)
       .then((data) => data.json())
-      .then((members) => setMembers(members));
+      .then((members) => setMembers(members))
+      .catch((err) => console.log(err.message));
   }, []);
   return (
     <dataLoaderContext.Provider value={{ services, blogs, members }}>

@@ -20,7 +20,7 @@ export function useAuth() {
   return value;
 }
 function AuthProvider({ children }) {
-  const [loadding, setLoadding] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [user, setUser] = useState({});
   const auth = getAuth(app);
@@ -31,12 +31,10 @@ function AuthProvider({ children }) {
     const unSubscrib = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        setLoadding(false);
       } else {
         setUser({});
-        setLoadding(true);
       }
-
+      setLoading(false);
       return () => {
         unSubscrib();
       };
@@ -45,21 +43,23 @@ function AuthProvider({ children }) {
   // register user
   const register = (name, email, password) => {
     setError(false);
-    setLoadding(true);
+    setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
-      .then((data) => setUser(data.user))
-      .catch((err) => setError(err));
+      .then((data) => {
+        setUser(data.user);
 
-    // update profile
-    updateProfile(auth.currentUser, {
-      displayName: name,
-    });
+        // update profile
+        updateProfile(auth.currentUser, {
+          displayName: name,
+        });
+      })
+      .catch((err) => setError(err));
   };
 
   // login
   const login = (email, password) => {
     setError(false);
-    setLoadding(true);
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -77,7 +77,7 @@ function AuthProvider({ children }) {
       value={{
         register,
         user,
-        loadding,
+        loading,
         error,
         login,
         loginWithGoogle,

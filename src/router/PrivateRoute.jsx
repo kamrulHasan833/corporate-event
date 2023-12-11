@@ -18,7 +18,7 @@ function PrivateRoute({ children }) {
         <Navigate state={location} to="/login"></Navigate>
       );
     } else {
-      element = <p>Loading........</p>;
+      element = <p>Loading....</p>;
     }
     return element;
   };

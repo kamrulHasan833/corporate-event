@@ -1,4 +1,3 @@
-import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -21,7 +20,7 @@ function Teams() {
           desc="We are cooperated nicely each other."
         ></SectionHeader>
         <Swiper
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop={true}
           slidesPerView={1}
           spaceBetween={24}
